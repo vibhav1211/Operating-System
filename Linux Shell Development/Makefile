@@ -1,6 +1,6 @@
-taaj: taaj.o utils.o command.o pipeline.o history.o signal_handler.o flock.o malware_detection.o
-	g++ -Wall taaj.o utils.o command.o pipeline.o signal_handler.o history.o  flock.o malware_detection.o -o taaj -lreadline
-taaj.o: taaj.cpp utils.hpp pipeline.hpp history.hpp signal_handler.hpp flock.hpp malware_detection.hpp
+main: main.o utils.o command.o pipeline.o history.o signal_handler.o flock.o malware_detection.o
+	g++ -Wall main.o utils.o command.o pipeline.o signal_handler.o history.o  flock.o malware_detection.o -o main -lreadline
+main.o: main.cpp utils.hpp pipeline.hpp history.hpp signal_handler.hpp flock.hpp malware_detection.hpp
 utils.o: utils.cpp utils.hpp history.hpp
 command.o: command.cpp command.hpp utils.hpp
 pipeline.o: pipeline.cpp pipeline.hpp command.hpp utils.hpp signal_handler.hpp
@@ -13,4 +13,4 @@ locker: flock_check.cpp
 malware: malware_external.cpp
 	g++ -Wall malware_external.cpp -o malware
 clean: 
-	rm -f *.o taaj locker malware test.txt
+	rm -f *.o main locker malware test.txt

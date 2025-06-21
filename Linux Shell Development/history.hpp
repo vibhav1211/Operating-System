@@ -4,7 +4,7 @@
 #include <deque>
 #include <fstream>
 #define CACHE_SIZE  1000
-#define HISTORY_CACHE  ".taajshcache"
+#define HISTORY_CACHE  ".maincache"
 
 enum DIREC
 {
